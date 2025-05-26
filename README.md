@@ -6,6 +6,7 @@ my vim stuff
 The following tools must be installed and available in the system path:
 
 pathogen
+
 gruvbox
 
 ---
