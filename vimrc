@@ -69,15 +69,15 @@ let g:netrw_winsize = 25     " width of the explorer
 
 " toggle file browser function
 function! ToggleNetrw()
-  if exists("t:explorer_open")
-    exec "bd" t:explorer_buf
-    unlet t:explorer_open
-  else
-    Vex
-    let t:explorer_buf = bufnr("%")
-    let t:explorer_open = 1
-  endif
+  for w in range(1, winnr('$'))
+    if getbufvar(winbufnr(w), '&filetype') ==# 'netrw'
+      execute w . 'wincmd w'
+      close
+      return
+    endif
+  endfor
+  Vexplore
 endfunction
 
 " toggle file browser
-nnoremap <leader>n :call ToggleNetrw()<CR>
+nnoremap <leader>, :call ToggleNetrw()<CR>
