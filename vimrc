@@ -56,3 +56,28 @@ set expandtab		" use spaces instead of tabs
 
 " make bpftrace scripts just copy js highlighting
 au BufRead,BufNewFile *.bt set filetype=javascript
+
+" leader
+let mapleader = ","
+
+" netrw config
+let g:netrw_banner = 0       " no banner
+let g:netrw_listtype = 3     " tree-style listing
+let g:netrw_browse_split = 4 " open files in previous window
+let g:netrw_altv = 1         " open splits to the right
+let g:netrw_winsize = 25     " width of the explorer
+
+" toggle file browser function
+function! ToggleNetrw()
+  if exists("t:explorer_open")
+    exec "bd" t:explorer_buf
+    unlet t:explorer_open
+  else
+    Vex
+    let t:explorer_buf = bufnr("%")
+    let t:explorer_open = 1
+  endif
+endfunction
+
+" toggle file browser
+nnoremap <leader>n :call ToggleNetrw()<CR>
