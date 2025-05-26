@@ -39,6 +39,7 @@ filetype plugin indent on
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 set background=dark
+let g:solarized_termcolors=256
 colorscheme gruvbox
 
 " The following are commented out as they cause vim to behave a lot
