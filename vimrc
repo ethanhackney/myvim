@@ -55,6 +55,9 @@ set expandtab  " use spaces instead of tabs
 " make bpftrace scripts just copy js highlighting
 au BufRead,BufNewFile *.bt set filetype=javascript
 
+" convert to upper case
+nmap vu <esc>veU
+
 " leader
 let mapleader = ","
 
