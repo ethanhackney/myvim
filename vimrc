@@ -38,7 +38,6 @@ syntax enable
 
 " dark gruvbox
 set background=dark
-let g:solarized_termcolors=256
 colorscheme gruvbox
 
 " make vim less like vi
