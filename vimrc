@@ -27,32 +27,30 @@ if has("syntax")
   syntax on
 endif
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+" jump to the last position when reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
-syntax enable
+" load indentation rules and plugins according to the detected filetype.
 filetype plugin indent on
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
+" enable syntax
+syntax enable
+
+" dark gruvbox
 set background=dark
 let g:solarized_termcolors=256
 colorscheme gruvbox
 
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
-set showcmd		" Show (partial) command in status line.
-set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
-set smartcase		" Do smart case matching
-set incsearch		" Incremental search
-set autowrite		" Automatically save before commands like :next and :make
-set hidden		" Hide buffers when they are abandoned
-set number		" number line
-set expandtab		" use spaces instead of tabs
+" make vim less like vi
+set showcmd    " Show (partial) command in status line.
+set showmatch  " Show matching brackets.
+set ignorecase " Do case insensitive matching
+set smartcase  " Do smart case matching
+set incsearch  " Incremental search
+set autowrite  " Automatically save before commands like :next and :make
+set hidden     " Hide buffers when they are abandoned
+set number     " number line
+set expandtab  " use spaces instead of tabs
 
 " make bpftrace scripts just copy js highlighting
 au BufRead,BufNewFile *.bt set filetype=javascript
@@ -68,11 +66,11 @@ nnoremap <leader>a zO " open folded function
 nnoremap <leader>s zC " close folded function
 
 " netrw config
-let g:netrw_banner = 0       " no banner
-let g:netrw_listtype = 3     " tree-style listing
-let g:netrw_browse_split = 4 " open files in previous window
-let g:netrw_altv = 1         " open splits to the right
-let g:netrw_winsize = 25     " width of the explorer
+let g:netrw_banner       =  0 " no banner
+let g:netrw_listtype     =  3 " tree-style listing
+let g:netrw_browse_split =  4 " open files in previous window
+let g:netrw_altv         =  1 " open splits to the right
+let g:netrw_winsize      = 25 " width of the explorer
 
 " toggle file browser function
 function! ToggleNetrw()
