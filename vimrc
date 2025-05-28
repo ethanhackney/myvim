@@ -55,7 +55,7 @@ set expandtab  " use spaces instead of tabs
 au BufRead,BufNewFile *.bt set filetype=javascript
 
 " convert to upper case
-nmap vu <esc>veU
+nnoremap vu <esc>veU
 
 " leader
 let mapleader = ","
