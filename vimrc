@@ -60,14 +60,6 @@ nnoremap vu <esc>veU
 " leader
 let mapleader = ","
 
-" folding
-set foldenable        " enable folding
-set foldmethod=syntax " syntax based folding
-set foldlevelstart=0  " start with all folds closed
-nnoremap <leader>a zO " open folded function
-nnoremap <leader>s zC " close folded function
-nnoremap <leader>d zR " open all folds
-
 " netrw config
 let g:netrw_banner       =  0 " no banner
 let g:netrw_listtype     =  3 " tree-style listing
